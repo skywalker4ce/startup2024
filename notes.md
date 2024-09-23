@@ -1,0 +1,1 @@
+ssh -i .\chavedesecuridade.pem ubuntu@skyrateit.click
