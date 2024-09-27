@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <h1>Welcome to RateIt!</h1>
+    <hr /> 
 </head>
 <body>
-    <p>Login to see ratings!</p>
-    <p>This is where you would login</p>
-    <a href="index1.html"> Login page link</a>
-    <li>
-        <label for=email>Email: </label>
-        <input type=email id="email" name="varEmail"/>
-    </li>
-    <li>
-        <label for=password>Password: </label>
-        <input type=password id="password" name="varPassword"/>
-    </li>
+    <form method="get" action="index.html">
+        <div>
+          <span>@</span>
+          <input type="text" placeholder="your@email.com" />
+        </div>
+        <div>
+          <span>🔒</span>
+          <input type="password" placeholder="password" />
+        </div>
+        <button type="submit">Login</button>
+        <button type="submit">Create</button>
+      </form>
 </body>
 </html>
 <footer>
