@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <h1>Welcome to RateIt!</h1> 
+    <h1>Welcome to RateIt!<sup>&reg;</h1> 
     <form method="get" action="index.html">
         <button type="submit">Logout</button>
     </form>
@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <p>See another Rate it Scale!</p>
+    <p>See another RateIt!<sup>&reg; scale!</p>
     <form method="get" action="index2.html">
         <div>
           <span>Username: </span>
@@ -34,6 +34,30 @@
          <img alt="Rating Scale" src="C:\Users\skyaw\OneDrive\Pictures\rating_scale.jpg" />
          <br />
       </div>
+      <form method="get" action="index2.html">
+        <div>
+          <span>Add your own rating:</span>
+          <br />
+          <span>New Category: </span>
+          <input type="text" placeholder="category" />
+          <span>Thing you are rating: </span>
+          <input type="text" placeholder="Subcategory item" />
+        </div>
+        <div>
+          <label for="range">Range: </label>
+          <input type="range" name="varRange" id="range" min="0" max="100" step="1" value="0" />
+          <output id="rangeOutput" for="range">0</output>
+          <!-- Range requires some JavaScript in order to make it work. Ignore this for now. -->
+          <script>
+            const range = document.querySelector('#range');
+            const rangeOutput = document.querySelector('#rangeOutput');
+            range.addEventListener('input', function() {
+              rangeOutput.textContent = range.value;
+            });
+          </script>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
 </body>
 
 </html>
