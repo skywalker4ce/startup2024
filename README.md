@@ -7,9 +7,10 @@ One of my fun hobbies and pasttimes with my siblings has been to always order le
 
 ### Designs
 
-![IMG_1031](https://github.com/user-attachments/assets/cd7d9c18-83bc-4f95-a25b-b770e910d739)
-![IMG_1033](https://github.com/user-attachments/assets/ce051888-ca11-4ca4-ba43-07c484468021)
-![IMG_1034](https://github.com/user-attachments/assets/9e0cda07-2664-42cd-ac5c-a28d89cc0698)
+<img src="https://github.com/user-attachments/assets/cd7d9c18-83bc-4f95-a25b-b770e910d739" width="400">
+<img src="https://github.com/user-attachments/assets/ce051888-ca11-4ca4-ba43-07c484468021" width="400">
+<img src="https://github.com/user-attachments/assets/9e0cda07-2664-42cd-ac5c-a28d89cc0698" width="400">
+
 
 ### Key features
 
@@ -33,3 +34,19 @@ I am going to use the required technologies in the following ways.
   - submitting a new rating scale or new ratings for a scale
 - **DB/Login** - Store users, and rating scale data in database. Register and login users. Credentials securely stored in database. Can't rate or see other's ratings unless authenticated.
 - **WebSocket** - As each user adds new ratings to their scale, their ratings should be updated on other's screens.
+
+## HTML deliverable
+
+- [x] **HTML pages**
+    - 5 Total pages created
+      - One for logging in
+      - One for the main page
+      - One for interacting with the scale created
+      - One for the Database
+      - One for the about info  
+- [x] **Links** - Each page properly links to the correct page except the about page which links back to the login page.
+                  Most of them link using the submit button forms or the back/logout buttons at the top of each page
+- [x] **Text** - Text is used to describe what certain buttons do and to make the user feel welcome
+- [x] **Images** - Embedded a placeholder image for my Rating scale for right now. This might change later
+- [x] **DB/Login** - A whole page linked as a database placeholder. Submit boxes will be used to submit data
+- [x] **WebSocket** - Hard to show how this will work, but in reality users will see other's updated rating scales when they update them
