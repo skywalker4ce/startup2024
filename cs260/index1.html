@@ -1,71 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <h1>Welcome to RateIt!<sup>&reg;</h1> 
-    <form method="get" action="index.html">
-        <button type="submit">Logout</button>
-    </form>
-    <hr /> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Home Page</title>
 </head>
 
-<body>
-    <p>See another RateIt!<sup>&reg;</p>
-    <form method="get" action="index2.html">
-        <div>
-          <span>Username: </span>
-          <input type="text" placeholder="username" />
-        </div>
-        <div>
-            <label for="select">Category: </label>
-            <select id="select" name="varSelect">
-              <option>Lemonade</option>
-              <option selected>Burgers</option>
-              <option>Restaurants</option>
-            </select>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-      <div>
-        <!-- I have an image here for right now but later this will be a scale that users can interact with -->
-         <br />
-         <img alt="Rating Scale" src="https://file.garden/ZvdRZH6UyWRXW1tt/rating_scale.jpg" />
-         <br />
-      </div>
-      <form method="get" action="index2.html">
-        <div>
-          <span>Add your own rating:</span>
-          <br />
-          <span>New Category: </span>
-          <input type="text" placeholder="category" />
-          <br />
-          <span>Thing you are rating: </span>
-          <input type="text" placeholder="subcategory item" />
-        </div>
-        <div>
-          <label for="range">Rating: </label>
-          <input type="range" name="varRange" id="range" min="1" max="10" step="1" value="1" />
-          <output id="rangeOutput" for="range">1</output>
-          <!-- Range requires some JavaScript in order to make it work. Ignore this for now. -->
-          <script>
-            const range = document.querySelector('#range');
-            const rangeOutput = document.querySelector('#rangeOutput');
-            range.addEventListener('input', function() {
-              rangeOutput.textContent = range.value;
-            });
-          </script>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-</body>
+<body class="body-content">
 
-</html>
-<footer>
+  <header>
+    <div class="header-content">
+      <h1>Welcome to RateIt!<sup>&reg;</sup></h1>
+      <form method="get" action="index.html">
+        <button type="submit">Logout</button>
+      </form>
+      <hr />
+    </div>
+  </header>
+
+  <p>See another RateIt!<sup>&reg;</p>
+  <form method="get" action="index2.html">
+    <div>
+      <span>Username: </span>
+      <input type="text" placeholder="username" />
+    </div>
+    <div>
+      <label for="select">Category: </label>
+      <select id="select" name="varSelect">
+        <option>Lemonade</option>
+        <option selected>Burgers</option>
+        <option>Restaurants</option>
+      </select>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  <div>
+    <!-- I have an image here for right now but later this will be a scale that users can interact with -->
+    <br />
+    <img alt="Rating Scale" src="https://file.garden/ZvdRZH6UyWRXW1tt/rating_scale.jpg" />
+    <br />
+  </div>
+  <form method="get" action="index2.html">
+    <div>
+      <span>Add your own rating:</span>
+      <br />
+      <span>New Category: </span>
+      <input type="text" placeholder="category" />
+      <br />
+      <span>Thing you are rating: </span>
+      <input type="text" placeholder="subcategory item" />
+    </div>
+    <div>
+      <label for="range">Rating: </label>
+      <input type="range" name="varRange" id="range" min="1" max="10" step="1" value="1" />
+      <output id="rangeOutput" for="range">1</output>
+      <!-- Range requires some JavaScript in order to make it work. Ignore this for now. -->
+      <script>
+        const range = document.querySelector('#range');
+        const rangeOutput = document.querySelector('#rangeOutput');
+        range.addEventListener('input', function () {
+          rangeOutput.textContent = range.value;
+        });
+      </script>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <footer>
     <hr />
     <span class="text-reset">Skyler's Github: </span>
     <a href="https://github.com/skywalker4ce/startup2024/blob/main/README.md">GitHub</a>
     <br />
     <a href="index4.html">Read about Rate it</a>
-</footer>
+  </footer>
+
+</body>
+
+</html>
