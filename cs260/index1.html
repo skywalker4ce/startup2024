@@ -9,8 +9,9 @@
   <title>Home Page</title>
 </head>
 
-<body class="container mt-5">
+<body>
 
+  <!-- Header Section -->
   <header class="text-center mb-4">
     <div class="header-content">
       <h1 class="display-4">Welcome to RateIt!<sup>&reg;</sup></h1>
@@ -21,66 +22,73 @@
     </div>
   </header>
 
-  <!-- Bootstrap Grid for layout -->
-  <div class="row">
-    <!-- Left: "See another RateIt" form -->
-    <div class="col-md-4 text-start">
-      <p class="lead">See another RateIt!<sup>&reg;</sup></p>
-      <form method="get" action="index2.html">
-        <div class="mb-3">
-          <label for="username" class="form-label">Username: </label>
-          <input type="text" id="username" class="form-control" placeholder="username" />
-        </div>
-        <div class="mb-3">
-          <label for="select" class="form-label">Category: </label>
-          <select id="select" name="varSelect" class="form-select">
-            <option>Lemonade</option>
-            <option selected>Burgers</option>
-            <option>Restaurants</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </div>
+  <!-- Container for main content -->
+  <div class="container">
 
-    <!-- Center: Image -->
-    <div class="container d-flex flex-column align-items-center mt-5">
-      <div class="rating-buttons">
-        <button class="rating-btn" data-rating="10">10</button>
-        <button class="rating-btn" data-rating="9">9</button>
-        <button class="rating-btn" data-rating="8">8</button>
-        <button class="rating-btn" data-rating="7">7</button>
-        <button class="rating-btn" data-rating="6">6</button>
-        <button class="rating-btn" data-rating="5">5</button>
-        <button class="rating-btn" data-rating="4">4</button>
-        <button class="rating-btn" data-rating="3">3</button>
-        <button class="rating-btn" data-rating="2">2</button>
-        <button class="rating-btn" data-rating="1">1</button>
+    <!-- Bootstrap Grid for layout -->
+    <div class="row d-flex justify-content-between">
+      
+      <!-- Left: "See another RateIt" form -->
+      <div class="col-md-3">
+        <p class="lead">See another RateIt!<sup>&reg;</sup></p>
+        <form method="get" action="index2.html">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username: </label>
+            <input type="text" id="username" class="form-control" placeholder="username" />
+          </div>
+          <div class="mb-3">
+            <label for="select" class="form-label">Category: </label>
+            <select id="select" name="varSelect" class="form-select">
+              <option>Lemonade</option>
+              <option selected>Burgers</option>
+              <option>Restaurants</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+      <!-- Center: Rating Buttons -->
+      <div class="col-md-4 text-center">
+        <div class="rating-buttons d-flex flex-column align-items-center">
+          <button class="rating-btn" data-rating="10">10</button>
+          <button class="rating-btn" data-rating="9">9</button>
+          <button class="rating-btn" data-rating="8">8</button>
+          <button class="rating-btn" data-rating="7">7</button>
+          <button class="rating-btn" data-rating="6">6</button>
+          <button class="rating-btn" data-rating="5">5</button>
+          <button class="rating-btn" data-rating="4">4</button>
+          <button class="rating-btn" data-rating="3">3</button>
+          <button class="rating-btn" data-rating="2">2</button>
+          <button class="rating-btn" data-rating="1">1</button>
+        </div>
+      </div>
+
+      <!-- Right: "Add your own rating" form -->
+      <div class="col-md-3">
+        <form method="get" action="index2.html">
+          <p class="lead">Add your own rating:</p>
+          <div class="mb-3">
+            <label for="newCategory" class="form-label">New Category: </label>
+            <input type="text" id="newCategory" class="form-control" placeholder="category" />
+          </div>
+          <div class="mb-3">
+            <label for="subCategory" class="form-label">Thing you are rating: </label>
+            <input type="text" id="subCategory" class="form-control" placeholder="subcategory item" />
+          </div>
+          <div class="mb-4">
+            <label for="range" class="form-label">Rating: </label>
+            <input type="range" class="form-range" name="varRange" id="range" min="1" max="10" step="1" value="1" />
+            <output id="rangeOutput" for="range">1</output>
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
       </div>
     </div>
 
-    <!-- Right: "Add your own rating" form -->
-    <div class="col-md-4 text-start">
-      <form method="get" action="index2.html">
-        <p class="lead">Add your own rating:</p>
-        <div class="mb-3">
-          <label for="newCategory" class="form-label">New Category: </label>
-          <input type="text" id="newCategory" class="form-control" placeholder="category" />
-        </div>
-        <div class="mb-3">
-          <label for="subCategory" class="form-label">Thing you are rating: </label>
-          <input type="text" id="subCategory" class="form-control" placeholder="subcategory item" />
-        </div>
-        <div class="mb-4">
-          <label for="range" class="form-label">Rating: </label>
-          <input type="range" class="form-range" name="varRange" id="range" min="1" max="10" step="1" value="1" />
-          <output id="rangeOutput" for="range">1</output>
-        </div>
-        <button type="submit" class="btn btn-success">Submit</button>
-      </form>
-    </div>
-  </div>
+  </div> <!-- End of container -->
 
+  <!-- Footer Section -->
   <footer class="text-center mt-5">
     <hr />
     <span>Skyler's GitHub: </span>

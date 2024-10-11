@@ -68,6 +68,60 @@ body {
     background-color: #df360c;
   }
 
+  /* Container to hold buttons */
+.rating-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+}
+
+/* Style each button */
+.rating-btn {
+  width: 50px; /* Button width */
+  height: 50px; /* Button height (square) */
+  margin: 5px 0; /* Space between buttons */
+  font-size: 18px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Shades of orange for each button */
+.rating-btn:nth-child(1) {
+  background-color: #ff4500; /* Dark orange */
+}
+.rating-btn:nth-child(2) {
+  background-color: #ff5733;
+}
+.rating-btn:nth-child(3) {
+  background-color: #ff6f50;
+}
+.rating-btn:nth-child(4) {
+  background-color: #ff7f66;
+}
+.rating-btn:nth-child(5) {
+  background-color: #ff8f7a;
+}
+.rating-btn:nth-child(6) {
+  background-color: #ffa088;
+}
+.rating-btn:nth-child(7) {
+  background-color: #ffb396;
+}
+.rating-btn:nth-child(8) {
+  background-color: #ffc6a3;
+}
+.rating-btn:nth-child(9) {
+  background-color: #ffd8b0;
+}
+.rating-btn:nth-child(10) {
+  background-color: #ffeccc; /* Light orange */
+}
+
+/* Hover effect */
+.rating-btn:hover {
+  opacity: 0.8;
+}
+
 
   /* Footer styles */
   footer a {
