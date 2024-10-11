@@ -1,139 +1,90 @@
-/* Customizing the body content */
+/* Global Styles */
 body {
-    background-color: #000000; /* Light background */
-    font-family: 'Arial', sans-serif;
-  }
-  
-  /* Header styles */
-  .header-content h1 {
-    color: #df360c; /* Bootstrap primary color */
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-  
-  .header-content hr {
-    border-top: 2px solid #df360c;
-  }
-  
-  /* Form styles */
-  form input[type="email"],
-  form input[type="password"] {
-    border-radius: 8px;
-    border: 1px solid #df360c;
-    padding: 10px;
-  }
-  
-  /* Button styles */
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-  }
+  background-color: #000000; /* Light background */
+  font-family: 'Arial', sans-serif;
+}
 
-  .btn:hover {
-    background-color: #cc7750;
-    color:#000000;
-    border-color: #cc7750;
-    cursor: pointer;
-  }
-  
-  /* .btn-danger:hover, .btn-secondary:hover, .btn-success:hover, .btn-primary:hover {
-    background-color: #cc7750;
-    color:#000000;
-    border-color: #cc7750;
-    cursor: pointer;
-  } */
+/* Header styles */
+.header-content h1 {
+  color: #df360c; /* Bootstrap primary color */
+  font-weight: bold;
+  letter-spacing: 2px;
+}
 
+.header-content hr {
+  border-top: 2px solid #df360c;
+}
 
-  .btn-primary {
-    background-color: #df360c;
-    border-color: #df360c;
-  }
-  
-  .btn-secondary {
-    background-color: #df360c;
-    border-color: #df360c;
-  }
-  
-  .btn-danger {
-    background-color: #df360c;
-    border-color: #df360c;
-  }
-    
-  .btn-success {
-    background-color: #df360c;
-    border-color: #df360c;
-  }
+/* Button styles */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
 
-  input[type="range"]::-webkit-slider-thumb {
-    background-color: #df360c;
-  }
+.btn:hover {
+  background-color: #cc7750;
+  color: #000000;
+  border-color: #cc7750;
+  cursor: pointer;
+}
 
-  /* Container to hold buttons */
+/* Ensure uniform colors for buttons */
+.btn-primary, .btn-secondary, .btn-danger, .btn-success {
+  background-color: #df360c;
+  border-color: #df360c;
+}
+
+/* Range input thumb styling */
+input[type="range"]::-webkit-slider-thumb {
+  background-color: #df360c;
+}
+
+/* Container to hold buttons */
 .rating-buttons {
   display: flex;
   flex-direction: column; /* Stack buttons vertically */
+  align-items: center; /* Ensure buttons are horizontally centered */
+  margin: 0 auto; /* Center the rating buttons container */
 }
 
 /* Style each button */
 .rating-btn {
-  width: 50px; /* Button width */
-  height: 50px; /* Button height (square) */
+  width: 60px; /* Button width */
+  height: 60px; /* Button height (square) */
   margin: 5px 0; /* Space between buttons */
   font-size: 18px;
-  color: #fff;
+  color: #000000;
   border: none;
   cursor: pointer;
 }
 
 /* Shades of orange for each button */
-.rating-btn:nth-child(1) {
-  background-color: #ff4500; /* Dark orange */
-}
-.rating-btn:nth-child(2) {
-  background-color: #ff5733;
-}
-.rating-btn:nth-child(3) {
-  background-color: #ff6f50;
-}
-.rating-btn:nth-child(4) {
-  background-color: #ff7f66;
-}
-.rating-btn:nth-child(5) {
-  background-color: #ff8f7a;
-}
-.rating-btn:nth-child(6) {
-  background-color: #ffa088;
-}
-.rating-btn:nth-child(7) {
-  background-color: #ffb396;
-}
-.rating-btn:nth-child(8) {
-  background-color: #ffc6a3;
-}
-.rating-btn:nth-child(9) {
-  background-color: #ffd8b0;
-}
-.rating-btn:nth-child(10) {
-  background-color: #ffeccc; /* Light orange */
-}
+.rating-btn:nth-child(1) { background-color: #ff4500; } /* Dark orange */
+.rating-btn:nth-child(2) { background-color: #ff5733; }
+.rating-btn:nth-child(3) { background-color: #ff6f50; }
+.rating-btn:nth-child(4) { background-color: #ff7f66; }
+.rating-btn:nth-child(5) { background-color: #ff8f7a; }
+.rating-btn:nth-child(6) { background-color: #ffa088; }
+.rating-btn:nth-child(7) { background-color: #ffb396; }
+.rating-btn:nth-child(8) { background-color: #ffc6a3; }
+.rating-btn:nth-child(9) { background-color: #ffd8b0; }
+.rating-btn:nth-child(10) { background-color: #ffeccc; } /* Light orange */
 
 /* Hover effect */
 .rating-btn:hover {
   opacity: 0.8;
 }
 
+/* Footer styles */
+footer a {
+  color: #df360c;
+  text-decoration: none;
+}
 
-  /* Footer styles */
-  footer a {
-    color: #df360c;
-    text-decoration: none;
-  }
-  
-  footer a:hover {
-    text-decoration: underline;
-  }
-  
-  footer hr {
-    border-top: 1px solid #df360c;
-  }
-  
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer hr {
+  border-top: 1px solid #df360c;
+}
