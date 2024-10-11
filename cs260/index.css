@@ -6,20 +6,20 @@ body {
   
   /* Header styles */
   .header-content h1 {
-    color: #007bff; /* Bootstrap primary color */
+    color: #df360c; /* Bootstrap primary color */
     font-weight: bold;
     letter-spacing: 2px;
   }
   
   .header-content hr {
-    border-top: 2px solid #007bff;
+    border-top: 2px solid #df360c;
   }
   
   /* Form styles */
   form input[type="email"],
   form input[type="password"] {
     border-radius: 8px;
-    border: 1px solid #ced4da;
+    border: 1px solid #df360c;
     padding: 10px;
   }
   
@@ -30,18 +30,24 @@ body {
   }
   
   .btn-primary {
-    background-color: #28a745;
-    border-color: #28a745;
+    background-color: #df360c;
+    border-color: #df360c;
   }
   
   .btn-secondary {
-    background-color: #ffc107;
-    border-color: #ffc107;
+    background-color: #df360c;
+    border-color: #df360c;
   }
+  
+  .btn-danger {
+    background-color: #df360c;
+    border-color: #df360c;
+  }
+  
   
   /* Footer styles */
   footer a {
-    color: #007bff;
+    color: #df360c;
     text-decoration: none;
   }
   
@@ -50,6 +56,6 @@ body {
   }
   
   footer hr {
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid #df360c;
   }
   
