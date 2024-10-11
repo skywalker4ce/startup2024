@@ -1,6 +1,6 @@
 /* Customizing the body content */
-.body-content {
-    background-color: #f8f9fa; /* Light background */
+body {
+    background-color: #000000; /* Light background */
     font-family: 'Arial', sans-serif;
   }
   
