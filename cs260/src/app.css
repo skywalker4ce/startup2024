@@ -34,6 +34,14 @@ button {
   border-color: #df360c;
 }
 
+.btn-danger {
+  align-items: right;
+}
+
+.btn-success{
+  align-items: left;
+}
+
 /* Range input thumb styling */
 input[type="range"]::-webkit-slider-thumb {
   background-color: #df360c;
