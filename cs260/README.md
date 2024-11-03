@@ -50,3 +50,14 @@ I am going to use the required technologies in the following ways.
 - [x] **Images** - Embedded a placeholder image for my Rating scale for right now. This might change later
 - [x] **DB/Login** - A whole page linked as a database placeholder. Submit boxes will be used to submit data
 - [x] **WebSocket** - Hard to show how this will work, but in reality users will see other's updated rating scales when they update them
+
+## CSS deliverable
+
+For this deliverable I properly styled the application into it's final appearance. Depending on the javascript used later on will determine if anything else needs to be adjusted.
+
+- [x] **Header, footer, and main content body** - centered all the content and moved it to look better on the page
+- [x] **Navigation elements** - Buttons looks clean.
+- [x] **Responsive to window resizing** - Should work with flex implementation
+- [x] **Application elements** - Looks very clean and very simplestic design
+- [x] **Application text content** - Consistent fonts and colors
+- [x] **Application rating scale** - Although the rating scale looks good and was finished. It could be improved with further knowledge of react
