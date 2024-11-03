@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { Login } from './login/login';
-import { Play } from './play/play';
-import { Scores } from './scores/scores';
+import { Create } from './create/create';
+import { Scale } from './scale/scale';
 import { About } from './about/about';
 import { AuthState } from './login/authState';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -39,8 +39,8 @@ function App() {
                         }
                         exact
                     />
-                    <Route path='/play' element={<Play userName={userName} />} />
-                    <Route path='/scores' element={<Scores />} />
+                    <Route path='/create' element={<Create userName={userName} />} />
+                    <Route path='/scale' element={<Scale />} />
                     <Route path='/about' element={<About />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
