@@ -15,6 +15,12 @@ function App() {
     const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
     const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
     const [authState, setAuthState] = React.useState(currentAuthState);
+
+    const navigate = useNavigate();
+    const handleSubmit = (event) => {
+        navigate('/about');
+    }
+
     return (
         <BrowserRouter>
             <div className="container mt-5">
@@ -52,7 +58,9 @@ function App() {
                     <span>Skyler's GitHub: </span>
                     <a href="https://github.com/skywalker4ce/startup2024/blob/main/cs260/README.md" className="text-decoration-none">GitHub</a>
                     <br />
-                    <a href="index4.html" className="text-decoration-none">Read about RateIt</a>
+                    <NavLink to="/about" className="btn btn-primary" activeClassName="active-link">
+                        Read about RateIt
+                    </NavLink>
                 </footer>
             </div>
         </BrowserRouter>
@@ -62,6 +70,6 @@ function App() {
 
 function NotFound() {
     return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
-  }
+}
 
-  export default App;
+export default App;
