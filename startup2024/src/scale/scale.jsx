@@ -1,6 +1,12 @@
 import React from 'react';
 
 export function Scale() {
+
+    const navigate = useNavigate();
+    const handleSubmit = (event) => {
+        navigate('/scale');
+    }
+
     return (
         <main className="container text-center mb-auto">
             <div className="row justify-content-center">
@@ -23,7 +29,9 @@ export function Scale() {
 
             <div className="text-center mt-5">
                 <p>This is a link that will get you to the database page:</p>
-                <a href="index3.html" className="btn btn-secondary">Go to Database</a>
+                <form onSubmit={handleSubmit} className="mx-auto" style={{ maxWidth: '400px' }}>
+                    <button type="submit" className="btn btn-success">Database</button>
+                </form>
             </div>
         </main>
     )
