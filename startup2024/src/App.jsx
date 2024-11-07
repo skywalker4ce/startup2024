@@ -9,8 +9,6 @@ import { AuthState } from './login/authState';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 
-
-
 function App() {
     const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');
     const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
@@ -53,7 +51,7 @@ function App() {
                     <span>Skyler's GitHub: </span>
                     <a href="https://github.com/skywalker4ce/startup2024/blob/main/cs260/README.md" className="text-decoration-none">GitHub</a>
                     <br />
-                    <NavLink to="/about" className="btn btn-primary" activeClassName="active-link">
+                    <NavLink to="/about" className="text-decoration-none" activeClassName="active-link">
                         Read about RateIt
                     </NavLink>
                 </footer>
