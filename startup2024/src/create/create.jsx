@@ -5,7 +5,7 @@ export function Create() {
 
   const navigate = useNavigate();
   const handleSubmit = (event) => {
-    navigate('/state')
+    navigate('/scale');
   }
 
 
