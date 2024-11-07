@@ -5,18 +5,21 @@ import React, { useState } from 'react';
 // import { AuthState } from './authState';
 
 export function Login({ userName, authState, onAuthChange }) {
-    // State for email and password
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    // Handle form submission
     const handleSubmit = (event) => {
-        event.preventDefault(); // Prevent form from reloading the page
+        event.preventDefault();
 
         console.log('Email:', email);
         console.log('Password:', password);
 
-        // Add your authentication logic here later
+        if (email && password) {
+            localStorage.setItem('userName', email); 
+            onAuthChange(email, authState.Authenticated); 
+            navigate('/create'); 
+        }
     };
 
     return (
@@ -32,8 +35,7 @@ export function Login({ userName, authState, onAuthChange }) {
                         className="form-control"
                         placeholder="your@email.com"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)} // Update email state
-                        required
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div className="mb-3">
@@ -42,7 +44,7 @@ export function Login({ userName, authState, onAuthChange }) {
                         className="form-control"
                         placeholder="password"
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)} // Update password state
+                        onChange={(e) => setPassword(e.target.value)}
                         required
                     />
                 </div>
