@@ -11,7 +11,7 @@ export function Login({ userName, authState, onAuthChange }) {
                 <p className="lead">Login to create your own rating or view someone else's!</p>
             </div>
 
-            <form method="get" action="index1.html" className="mx-auto" style="max-width: 400px;">
+            <form method="get" action="index1.html" className="mx-auto" style={{ maxWidth: '400px' }}>
                 <div className="mb-3">
                     <input type="email" className="form-control" placeholder="your@email.com" required />
                 </div>
@@ -20,9 +20,9 @@ export function Login({ userName, authState, onAuthChange }) {
                 </div>
                 <div className="d-flex justify-content-between">
                     <button type="submit" className="btn btn-primary">Login</button>
-                    <button type="submit" className="btn btn-secondary">Create</button>
+                    <button type="button" className="btn btn-secondary">Create</button>
                 </div>
             </form>
         </>
-    )
+    );
 }
