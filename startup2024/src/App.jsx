@@ -16,11 +16,6 @@ function App() {
     const currentAuthState = userName ? AuthState.Authenticated : AuthState.Unauthenticated;
     const [authState, setAuthState] = React.useState(currentAuthState);
 
-    const navigate = useNavigate();
-    const handleSubmit = (event) => {
-        navigate('/about');
-    }
-
     return (
         <BrowserRouter>
             <div className="container mt-5">
