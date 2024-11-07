@@ -1,10 +1,11 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 
 export function Scale() {
 
     const navigate = useNavigate();
     const handleSubmit = (event) => {
-        navigate('/scale');
+        navigate('/database');
     }
 
     return (
