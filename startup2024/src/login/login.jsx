@@ -52,7 +52,7 @@ export function Login({ userName, authState, onAuthChange }) {
                 </div>
                 <div className="d-flex justify-content-between">
                     <button type="submit" className="btn btn-primary">Login</button>
-                    <button type="button" className="btn btn-secondary">Create</button>
+                    <button type="submit" className="btn btn-secondary">Create</button>
                 </div>
             </form>
         </>
