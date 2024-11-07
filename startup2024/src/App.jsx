@@ -4,6 +4,7 @@ import { Login } from './login/login';
 import { Create } from './create/create';
 import { Scale } from './scale/scale';
 import { About } from './about/about';
+import { Database } from './database';
 import { AuthState } from './login/authState';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
@@ -42,6 +43,7 @@ function App() {
                     <Route path='/create' element={<Create userName={userName} />} />
                     <Route path='/scale' element={<Scale />} />
                     <Route path='/about' element={<About />} />
+                    <Route path='/database' element={<Database />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
 
