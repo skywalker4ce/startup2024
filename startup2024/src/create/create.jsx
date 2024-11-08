@@ -7,6 +7,9 @@ export function Create() {
   const handleSubmit = (event) => {
     navigate('/scale');
   }
+  const handleLogout = (event) => {
+    navigate('/login')
+  }
 
 
   return (
@@ -15,6 +18,9 @@ export function Create() {
       <div className="row d-flex justify-content-between">
 
         <div className="col-md-3">
+          <form onSubmit={handleLogout} className="mx-auto" style={{ maxWidth: '400px' }}>
+            <button type="submit" className="btn btn-primary">Logout</button>
+          </form>
           <p className="lead">See another RateIt!<sup>&reg;</sup></p>
           <form onSubmit={handleSubmit} className="mx-auto" style={{ maxWidth: '400px' }}>
             <div className="mb-3">
