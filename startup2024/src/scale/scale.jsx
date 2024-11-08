@@ -4,25 +4,38 @@ import { useNavigate } from "react-router-dom";
 export function Scale() {
 
     const navigate = useNavigate();
+
     const handleSubmit = (event) => {
+        event.preventDefault();
         navigate('/database');
     }
 
     const handleLogout = (event) => {
         event.preventDefault();
         navigate("/", { replace: true });
-        window.location.reload(); // Forces a reload, ensuring links work
-      };
+        window.location.reload();
+    };
 
-      const handleBack = (event) => {
+    const handleBack = (event) => {
         event.preventDefault();
         navigate("/create", { replace: true });
-        window.location.reload(); // Forces a reload, ensuring links work
-      };
+        window.location.reload();
+    };
 
     return (
         <main className="container text-center mb-auto">
 
+            {/* Row to position Logout and Back buttons on the left and right */}
+            <div className="row d-flex justify-content-between align-items-start mb-4">
+                <div className="col-md-3 text-start">
+                    <button onClick={handleLogout} className="btn btn-logout">Logout</button>
+                </div>
+                <div className="col-md-3 text-end">
+                    <button onClick={handleBack} className="btn btn-logout">Back</button>
+                </div>
+            </div>
+
+            {/* Original content of your Scale component */}
             <div className="col-md-3">
                 <button onClick={handleLogout} className="btn btn-logout">Logout</button>
                 <br />
@@ -59,6 +72,7 @@ export function Scale() {
                 <br />
                 <br></br>
             </div>
+
         </main>
-    )
+    );
 }
