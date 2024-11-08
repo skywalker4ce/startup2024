@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 export function Create() {
 
   const navigate = useNavigate();
+  
   const handleSubmit = (event) => {
+    event.preventDefault();
     navigate('/scale');
   }
   const handleLogout = () => {
