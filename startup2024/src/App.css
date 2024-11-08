@@ -36,7 +36,8 @@ button {
 
 .btn-logout{
   background-color: #000000;
-  border-color: #000000;
+  border-color: #df360c;
+  color: #df360c;
 }
 
 .btn-danger {
