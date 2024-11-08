@@ -61,3 +61,15 @@ For this deliverable I properly styled the application into it's final appearanc
 - [x] **Application elements** - Looks very clean and very simplestic design
 - [x] **Application text content** - Consistent fonts and colors
 - [x] **Application rating scale** - Although the rating scale looks good and was finished. It could be improved with further knowledge of react
+
+## React deliverable
+
+For this deliverable I used JavaScript and React so that the application works.
+
+- [x] **Bundled and transpiled** - done!
+- [x] **Components** - Everything converted to React. Have some spots for where I will implement other things later on
+  - [x] **login** - When you press enter or the login button it takes you to the create page.
+  - [x] **database** -This currently just has access to another page but will eventually store actual data
+  - [x] **application logic** - Nothing added to the scale yet, waiting for database implementation
+- [x] **Router** - Routing between login and creating a rating scale.
+- [x] **Hooks** - Vue uses class properties instead of `UseState` to track login and switch pages. More of this will come as well once database access can be used
