@@ -8,7 +8,7 @@ export function Create() {
     navigate('/scale');
   }
   const handleLogout = (event) => {
-    navigate('/login')
+    navigate('/App')
   }
 
 
