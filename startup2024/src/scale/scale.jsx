@@ -35,13 +35,6 @@ export function Scale() {
                 </div>
             </div>
 
-            {/* Original content of your Scale component */}
-            <div className="col-md-3">
-                <button onClick={handleLogout} className="btn btn-logout">Logout</button>
-                <br />
-                <br></br>
-            </div>
-
             <div className="row justify-content-center">
                 <div className="col-md-8">
                     <h2 className="mb-4">Category</h2>
@@ -66,13 +59,7 @@ export function Scale() {
                     <button type="submit" className="btn btn-success">Database</button>
                 </form>
             </div>
-
-            <div className="col-md-3">
-                <button onClick={handleBack} className="btn btn-logout">Back</button>
-                <br />
-                <br></br>
-            </div>
-
+            
         </main>
     );
 }
