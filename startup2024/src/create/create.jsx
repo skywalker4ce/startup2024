@@ -10,6 +10,7 @@ export function Create() {
     navigate('/scale');
   }
   const handleLogout = () => {
+    event.preventDefault();
     navigate('/');
   }
 
