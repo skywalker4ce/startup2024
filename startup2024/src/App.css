@@ -34,6 +34,11 @@ button {
   border-color: #df360c;
 }
 
+.btn-logout{
+  background-color: #000000;
+  border-color: #000000;
+}
+
 .btn-danger {
   align-items: right;
 }

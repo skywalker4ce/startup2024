@@ -19,7 +19,7 @@ export function Create() {
 
         <div className="col-md-3">
           <form onSubmit={handleLogout} className="mx-auto" style={{ maxWidth: '400px' }}>
-            <button type="submit" className="btn btn-primary">Logout</button>
+            <button type="submit" className="btn btn-logout">Logout</button>
           </form>
           <br></br>
           <p className="lead">See another RateIt!<sup>&reg;</sup></p>
