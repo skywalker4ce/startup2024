@@ -8,7 +8,7 @@ export function Create() {
     navigate('/scale');
   }
   const handleLogout = () => {
-    navigate('/App')
+    navigate('/App');
   }
 
 
@@ -18,7 +18,8 @@ export function Create() {
       <div className="row d-flex justify-content-between">
 
         <div className="col-md-3">
-        <button onClick={handleLogout} className="btn btn-logout">Logout</button>
+          <button onClick={handleLogout} className="btn btn-logout">Logout</button>
+          <br />
           <br></br>
           <p className="lead">See another RateIt!<sup>&reg;</sup></p>
           <form onSubmit={handleSubmit} className="mx-auto" style={{ maxWidth: '400px' }}>
