@@ -9,10 +9,11 @@ export function Create() {
     event.preventDefault();
     navigate('/scale');
   }
-  const handleLogout = () => {
+  const handleLogout = (event) => {
     event.preventDefault();
-    navigate('/');
-  }
+    navigate("/", { replace: true });
+    window.location.reload(); // Forces a reload, ensuring links work
+  };
 
 
   return (
