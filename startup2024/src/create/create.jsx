@@ -20,6 +20,7 @@ export function Create() {
         <div className="col-md-3">
           <form onSubmit={handleLogout} className="mx-auto" style={{ maxWidth: '400px' }}>
             <button type="submit" className="btn btn-primary">Logout</button>
+            <br></br>
           </form>
           <p className="lead">See another RateIt!<sup>&reg;</sup></p>
           <form onSubmit={handleSubmit} className="mx-auto" style={{ maxWidth: '400px' }}>
@@ -40,6 +41,8 @@ export function Create() {
         </div>
 
         <div className="col-md-4 text-center">
+          <br></br>
+          <br></br>
           <div className="rating-buttons d-flex flex-column align-items-center">
             <button className="rating-btn" data-rating="10">10</button>
             <button className="rating-btn" data-rating="9">9</button>
@@ -55,6 +58,8 @@ export function Create() {
         </div>
 
         <div className="col-md-3">
+          <br></br>
+          <br></br>
           <form onSubmit={handleSubmit} className="mx-auto" style={{ maxWidth: '400px' }}>
             <p className="lead">Add your own rating:</p>
             <div className="mb-3">
