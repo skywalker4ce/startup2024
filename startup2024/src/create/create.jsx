@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react';
 
 export function Create() {
   const [foodItem, setFoodItem] = useState("Category Loading...");
-
+  const randomIndex = Math.floor(Math.random() * 12); 
   useEffect(() => {
     fetch('https://openlibrary.org/subjects/fantasy.json')
       .then(response => response.json())
-      .then(data => setFoodItem(data.works[5].title));
+      .then(data => setFoodItem(data.works[randomIndex].title));
   }, []);
 
   const navigate = useNavigate();
