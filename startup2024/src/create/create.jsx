@@ -8,7 +8,7 @@ export function Create() {
   useEffect(() => {
     fetch('https://openlibrary.org/subjects/fantasy.json')
       .then(response => response.json())
-      .then(data => setFoodItem(data.works[55].title));
+      .then(data => setFoodItem(data.works[5].title));
   }, []);
 
   const navigate = useNavigate();
