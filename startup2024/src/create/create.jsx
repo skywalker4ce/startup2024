@@ -2,9 +2,16 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 
 export function Create() {
+  const [foodItem, setFoodItem] = useState("Category Loading...");
+
+  useEffect(() => {
+    fetch('https://random-data-api.com/api/food/random_food')
+      .then(response => response.json())
+      .then(data => setFoodItem(data.food_name));
+  }, []);
 
   const navigate = useNavigate();
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
     navigate('/scale');
@@ -46,6 +53,7 @@ export function Create() {
         <div className="col-md-4 text-center">
           <br></br>
           <br></br>
+          <h2 className="mb-4">{foodItem}</h2>
           <div className="rating-buttons d-flex flex-column align-items-center">
             <button className="rating-btn" data-rating="10">10</button>
             <button className="rating-btn" data-rating="9">9</button>
