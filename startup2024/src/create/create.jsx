@@ -6,9 +6,9 @@ export function Create() {
   const [foodItem, setFoodItem] = useState("Category Loading...");
 
   useEffect(() => {
-    fetch('https://random-data-api.com/api/food/random_food')
+    fetch('https://openlibrary.org/subjects/fantasy.json')
       .then(response => response.json())
-      .then(data => setFoodItem(data.food_name));
+      .then(data => setFoodItem(data.works[0].title));
   }, []);
 
   const navigate = useNavigate();
