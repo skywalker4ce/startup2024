@@ -15,6 +15,32 @@ app.get('/', (req, res) => {
   res.send('Server is running!');
 });
 
+
+// GetCategories
+apiRouter.get('/categories', (_req, res) => {
+  res.send(categories);
+});
+
+
+// PostCategories
+apiRouter.post('/categories', (_req, res) => {
+  // update the list of categories
+  res.send(categories);
+});
+
+// GetCategories
+apiRouter.get('/categories', (_req, res) => {
+  res.send(categories);
+});
+
+
+// PostCategories
+apiRouter.post('/categories', (_req, res) => {
+  // update the list of categories
+  res.send(categories);
+});
+
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
