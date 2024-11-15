@@ -16,16 +16,15 @@ app.get('/', (req, res) => {
 });
 
 
-// GetCategories
-apiRouter.get('/categories', (_req, res) => {
-  res.send(categories);
+// GetRating
+apiRouter.get('/rating', (_req, res) => {
+  res.send(rating);
 });
 
-
-// PostCategories
-apiRouter.post('/categories', (_req, res) => {
+// PostRating
+apiRouter.post('/rating', (_req, res) => {
   // update the list of categories
-  res.send(categories);
+  res.send(rating);
 });
 
 // GetCategories

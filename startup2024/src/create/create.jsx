@@ -11,6 +11,22 @@ export function Create() {
       .then(data => setFoodItem(data.works[randomIndex].title));
   }, []);
 
+  // fetch('/api/categories')
+  //     .then((response) => response.json())
+  //     .then((categories) => {
+  //       setCategories(categories)
+  //     });
+
+    // fetch('/api/rating')
+  //     .then((response) => response.json())
+  //     .then((rating) => {
+  //       setRating(rating)
+  //     });
+
+  // This is a place holder for right now, waiting for databases 
+
+
+
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
