@@ -19,6 +19,7 @@ export function Login({ authState, onAuthChange }) {
 
     async function loginOrCreate(endpoint) {
         try {
+            
             const response = await fetch(endpoint, {
                 method: "POST",
                 body: JSON.stringify({ email, password }),
@@ -26,7 +27,7 @@ export function Login({ authState, onAuthChange }) {
                     "Content-type": "application/json; charset=UTF-8",
                 },
             });
-
+            console.log("Your mom")
             if (response.ok) {
                 const data = await response.json();
                 localStorage.setItem("userName", email); // Save email in local storage
