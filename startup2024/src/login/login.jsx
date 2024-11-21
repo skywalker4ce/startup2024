@@ -1,52 +1,44 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Button } from 'react-bootstrap';
+import { MessageDialog } from "./messageDialog";
 
-// import { Unauthenticated } from './unauthenticated';
-// import { Authenticated } from './authenticated';
-// import { AuthState } from './authState';
-
-export function Login({ userName, authState, onAuthChange }) {
-
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+export function Login({ authState, onAuthChange }) {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [displayError, setDisplayError] = useState(null);
     const navigate = useNavigate();
-    const [displayError, setDisplayError] = React.useState(null);
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-
-        console.log('Email:', email);
-        console.log('Password:', password);
-
-        if (email && password) {
-            localStorage.setItem('userName', email);
-            onAuthChange(email, authState.Authenticated);
-            navigate('/create');
-        }
-    };
 
     async function loginUser() {
-        loginOrCreate(`/api/auth/login`);
+        await loginOrCreate("/api/auth/login");
     }
 
     async function createUser() {
-        loginOrCreate(`/api/auth/create`);
+        await loginOrCreate("/api/auth/create");
     }
 
     async function loginOrCreate(endpoint) {
-        const response = await fetch(endpoint, {
-            method: 'post',
-            body: JSON.stringify({ email: userName, password: password }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        });
-        if (response?.status === 200) {
-            localStorage.setItem('userName', userName);
-            props.onLogin(userName);
-        } else {
-            const body = await response.json();
-            setDisplayError(`⚠ Error: ${body.msg}`);
+        try {
+            const response = await fetch(endpoint, {
+                method: "POST",
+                body: JSON.stringify({ email, password }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8",
+                },
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                localStorage.setItem("userName", email); // Save email in local storage
+                onAuthChange(email, authState.Authenticated); // Notify parent component
+                setDisplayError(null); // Clear any error messages
+                navigate("/create"); // Redirect user
+            } else {
+                const body = await response.json();
+                setDisplayError(`⚠ Error: ${body.msg}`);
+            }
+        } catch (error) {
+            setDisplayError("⚠ Error: Unable to connect to the server.");
         }
     }
 
@@ -56,7 +48,7 @@ export function Login({ userName, authState, onAuthChange }) {
                 <p className="lead">Login to create your own rating or view someone else's!</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="mx-auto" style={{ maxWidth: '400px' }}>
+            <form className="mx-auto" style={{ maxWidth: "400px" }} onSubmit={(e) => e.preventDefault()}>
                 <div className="mb-3">
                     <input
                         type="email"
@@ -64,6 +56,7 @@ export function Login({ userName, authState, onAuthChange }) {
                         placeholder="your@email.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        required
                     />
                 </div>
                 <div className="mb-3">
@@ -77,10 +70,10 @@ export function Login({ userName, authState, onAuthChange }) {
                     />
                 </div>
                 <div className="d-flex justify-content-between">
-                    <Button type='submit' onClick={() => loginUser()} disabled={!userName || !password}>
+                    <Button type="button" onClick={loginUser} disabled={!email || !password}>
                         Login
                     </Button>
-                    <Button type='submit' onClick={() => createUser()} disabled={!userName || !password}>
+                    <Button type="button" onClick={createUser} disabled={!email || !password}>
                         Create
                     </Button>
                 </div>
@@ -89,3 +82,4 @@ export function Login({ userName, authState, onAuthChange }) {
         </>
     );
 }
+
