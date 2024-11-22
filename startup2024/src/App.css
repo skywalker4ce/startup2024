@@ -107,3 +107,7 @@ footer hr {
 h2.mb-4 {
   font-size: 1rem; /* Adjust this value to make the text smaller */
 }
+
+.custom-dialog {
+  color: black;
+}

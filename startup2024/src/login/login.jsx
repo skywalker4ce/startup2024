@@ -79,7 +79,7 @@ export function Login({ authState, onAuthChange }) {
                     </Button>
                 </div>
             </form>
-            <MessageDialog message={displayError} onHide={() => setDisplayError(null)} />
+            <MessageDialog message={displayError} onHide={() => setDisplayError(null)} className="custom-dialog" />
         </>
     );
 }
