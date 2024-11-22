@@ -74,8 +74,8 @@ For this deliverable I used JavaScript and React so that the application works.
 - [x] **Router** - Routing between login and creating a rating scale.
 - [x] **Hooks** - Vue uses class properties instead of `UseState` to track login and switch pages. More of this will come as well once database access can be used
 
-## Service deliverable
 
+## Service deliverable
 
 For this deliverable I added backend endpoints that receives categories and ratings and returns the categories.
 
@@ -84,3 +84,14 @@ For this deliverable I added backend endpoints that receives categories and rati
 - [x] **Calls to third party endpoints** - I placed only a placeholder for this one for right now. Depending on how the database will work will help me know if I need to change this one
 - [x] **Backend service endpoints** - Placeholders for getting the categories and rating. I left the login ones for next phase and I might add more later depending on how the database works
 - [x] **Frontend calls service endpoints** - I did this using the fetch function. This generates a random example category for the first rating page
+
+## DB/Login deliverable
+
+For this deliverable I got the login working with the database so a user is logged in properly
+
+- [x] **MongoDB Atlas database created** - done!
+- [x] **Stores data in MongoDB** - done!
+- [x] **User registration** - Creates a new account in the database.
+- [x] **Use MongoDB to store credentials** - Stores both user and password
+- [x] **Restricts functionality** - You cannot login unless you are already in the database. Can't access anything else without logging in
+
