@@ -52,14 +52,6 @@ export function Scale() {
                     </div>
                 </div>
             </div>
-
-            <div className="text-center mt-5">
-                <p>This is a link that will get you to the database page:</p>
-                <form onSubmit={handleSubmit} className="mx-auto" style={{ maxWidth: '400px' }}>
-                    <button type="submit" className="btn btn-success">Database</button>
-                </form>
-            </div>
-            
         </main>
     );
 }
