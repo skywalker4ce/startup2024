@@ -20,6 +20,8 @@ body {
 button {
   padding: 10px 20px;
   font-size: 16px;
+  color: #df360c;
+  background-color: white;
 }
 
 .btn:hover {
