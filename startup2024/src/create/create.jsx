@@ -1,15 +1,19 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export function Create() {
   const [foodItem, setFoodItem] = useState("Category Loading...");
   const randomIndex = Math.floor(Math.random() * 12); 
+  const location = useLocation(); // Detect navigation
+
   useEffect(() => {
+    // Fetch data whenever this component is revisited
     fetch('https://openlibrary.org/subjects/fantasy.json')
       .then(response => response.json())
       .then(data => setFoodItem(data.works[randomIndex].title));
-  }, []);
+  }, [location]);
 
   // fetch('/api/categories')
   //     .then((response) => response.json())
