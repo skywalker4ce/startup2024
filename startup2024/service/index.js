@@ -17,6 +17,16 @@ app.use(cookieParser());
 
 app.set('trust proxy', true);
 
+const path = require("path");
+
+// Serve React app
+app.use(express.static(path.join(__dirname, "build"))); // Serve React static files
+
+// Fallback route to serve index.html for client-side routing
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
+
 // Router for service endpoints
 const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
