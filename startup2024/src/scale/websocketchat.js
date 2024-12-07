@@ -10,7 +10,7 @@ class ChatNotifierClass {
   constructor() {
     const port = window.location.port;
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-    this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/scale/ws`);
+    this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
 
     this.initializeWebSocket();
   }
@@ -40,7 +40,7 @@ class ChatNotifierClass {
     setTimeout(() => {
       const port = window.location.port;
       const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-      this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/scale/ws`);
+      this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
       this.initializeWebSocket(); // Re-initialize the WebSocket connection
     }, 4000); // Reconnect every 4 seconds
   }
@@ -51,7 +51,7 @@ class ChatNotifierClass {
         // WebSocket is closed or in the process of closing, open a new connection
         const port = window.location.port;
         const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-        this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/scale/ws`);
+        this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
         this.initializeWebSocket(); // Re-initialize the WebSocket connection
       } else if (this.socket.readyState === WebSocket.OPEN) {
         // WebSocket is open, send the message
