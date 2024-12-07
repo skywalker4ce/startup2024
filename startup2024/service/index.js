@@ -76,41 +76,61 @@ apiRouter.delete('/auth/logout', (_req, res) => {
   res.status(204).end();
 });
 
-
 // Test route to verify server functionality
 app.get('/', (req, res) => {
   res.send('Server is running!');
 });
 
-
 // GetRating
+let rating = {}; // Store ratings in memory for simplicity
 apiRouter.get('/rating', (_req, res) => {
-  res.send(rating);
+  res.json(rating);
 });
 
 // PostRating
-apiRouter.post('/rating', (_req, res) => {
-  // update the list of categories
-  res.send(rating);
+apiRouter.post('/rating', async (req, res) => {
+  const { token, category, subCategory, ratingValue } = req.body;
+
+  if (!token || !category || !subCategory || !ratingValue) {
+    return res.status(400).send({ msg: 'Invalid data' });
+  }
+
+  try {
+    const user = await DB.getUserByToken(token);
+    if (user) {
+      await DB.addRating(user._id, category, subCategory, ratingValue);
+      res.status(201).send({ msg: 'Rating saved successfully' });
+    } else {
+      res.status(401).send({ msg: 'Unauthorized' });
+    }
+  } catch (error) {
+    console.error('Error saving rating:', error);
+    res.status(500).send({ msg: 'Internal server error' });
+  }
 });
+
 
 // GetCategories
+let categories = {}; // Store categories in memory for simplicity
 apiRouter.get('/categories', (_req, res) => {
-  res.send(categories);
+  res.json(categories);
 });
-
 
 // PostCategories
-apiRouter.post('/categories', (_req, res) => {
-  // update the list of categories
-  res.send(categories);
-});
+apiRouter.post('/categories', (req, res) => {
+  const newCategories = req.body;
 
+  if (!newCategories || !Array.isArray(newCategories)) {
+    return res.status(400).send({ msg: 'Invalid data' });
+  }
+
+  categories = { ...categories, ...newCategories };
+  res.status(201).send({ msg: 'Categories updated successfully' });
+});
 
 // Start the server
 const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
-
 
 peerProxy(httpService);
