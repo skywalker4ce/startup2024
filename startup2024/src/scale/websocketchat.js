@@ -3,15 +3,7 @@ const ChatEvent = {
     Message: 'chatMessage',
   };
   
-  class ChatMessage {
-    constructor(from, type, value) {
-      this.from = from;
-      this.type = type;
-      this.value = value;
-    }
-  }
-  
-  class ChatNotifier {
+  class ChatNotifierClass {
     events = [];
     handlers = [];
   
@@ -21,14 +13,14 @@ const ChatEvent = {
       this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
   
       this.socket.onopen = () => {
-        this.receiveEvent(new ChatMessage('System', ChatEvent.System, { msg: 'Connected to chat' }));
+        this.receiveEvent({ from: 'System', type: ChatEvent.System, value: { msg: 'Connected to chat' } });
       };
   
       this.socket.onclose = () => {
-        this.receiveEvent(new ChatMessage('System', ChatEvent.System, { msg: 'Disconnected from chat' }));
+        this.receiveEvent({ from: 'System', type: ChatEvent.System, value: { msg: 'Disconnected from chat' } });
       };
   
-      this.socket.onmessage = async (msg) => {
+      this.socket.onmessage = (msg) => {
         try {
           const event = JSON.parse(msg.data);
           this.receiveEvent(event);
@@ -39,7 +31,7 @@ const ChatEvent = {
     }
   
     broadcastMessage(from, value) {
-      const message = new ChatMessage(from, ChatEvent.Message, value);
+      const message = { from, type: ChatEvent.Message, value };
       this.socket.send(JSON.stringify(message));
     }
   
@@ -60,6 +52,9 @@ const ChatEvent = {
     }
   }
   
-  const ChatNotifier = new ChatNotifier();
+  // Use a distinct variable name for the instance
+  const ChatNotifier = new ChatNotifierClass();
+  
   export { ChatEvent, ChatNotifier };
+  
   
