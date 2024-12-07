@@ -47,13 +47,22 @@ const ChatEvent = {
     }
   
     broadcastMessage(from, value) {
-      if (this.socket && this.socket.readyState === WebSocket.OPEN) {
-        const message = { from, type: ChatEvent.Message, value };
-        this.socket.send(JSON.stringify(message));
-      } else {
-        console.error('WebSocket is not open. Ready state:', this.socket ? this.socket.readyState : 'null');
+        if (this.socket) {
+          if (this.socket.readyState === WebSocket.CLOSED || this.socket.readyState === WebSocket.CLOSING) {
+            // WebSocket is closed or in the process of closing, open a new connection
+            const port = window.location.port;
+            const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+            this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/scale/ws`);
+            this.initializeWebSocket(); // Re-initialize the WebSocket connection
+          } else if (this.socket.readyState === WebSocket.OPEN) {
+            // WebSocket is open, send the message
+            const message = { from, type: ChatEvent.Message, value };
+            this.socket.send(JSON.stringify(message));
+          } else {
+            console.error('WebSocket is not open. Ready state:', this.socket.readyState);
+          }
+        }
       }
-    }
   
     addHandler(handler) {
       this.handlers.push(handler);
