@@ -41,7 +41,7 @@ const ChatEvent = {
         const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
         this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
         this.initializeWebSocket(); // Re-initialize the WebSocket connection
-      }, 3000); // Reconnect every 3 seconds
+      }, 4000); // Reconnect every 3 seconds
     }
   
     broadcastMessage(from, value) {
