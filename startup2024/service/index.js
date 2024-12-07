@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // Serve React static f
 
 // Fallback route to serve index.html for client-side routing
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', "index.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 // Router for service endpoints
