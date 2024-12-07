@@ -10,7 +10,7 @@ class ChatNotifierClass {
   constructor() {
     const port = window.location.port;
     const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-    this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
+    this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/scale/ws`);
 
     this.initializeWebSocket();
   }
@@ -29,8 +29,9 @@ class ChatNotifierClass {
       try {
         const event = JSON.parse(msg.data);
         this.receiveEvent(event);
-      } catch {
-        console.error('Failed to parse message');
+      } catch (error) {
+        console.error('Failed to parse message', error);
+        // Optionally handle unexpected data format here
       }
     };
   }
@@ -39,9 +40,9 @@ class ChatNotifierClass {
     setTimeout(() => {
       const port = window.location.port;
       const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-      this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
+      this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/scale/ws`);
       this.initializeWebSocket(); // Re-initialize the WebSocket connection
-    }, 4000); // Reconnect every 3 seconds
+    }, 4000); // Reconnect every 4 seconds
   }
 
   broadcastMessage(from, value) {
@@ -50,7 +51,7 @@ class ChatNotifierClass {
         // WebSocket is closed or in the process of closing, open a new connection
         const port = window.location.port;
         const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-        this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
+        this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/scale/ws`);
         this.initializeWebSocket(); // Re-initialize the WebSocket connection
       } else if (this.socket.readyState === WebSocket.OPEN) {
         // WebSocket is open, send the message
