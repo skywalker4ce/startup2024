@@ -1,5 +1,3 @@
-const { WebSocket } = require('ws'); // Adjust according to your setup (Browser or Node.js)
-
 const ChatEvent = {
   System: 'system',
   Message: 'chatMessage',
@@ -81,7 +79,6 @@ class ChatNotifierClass {
   }
 }
 
-// Use a distinct variable name for the instance
 const ChatNotifier = new ChatNotifierClass();
 
 export { ChatEvent, ChatNotifier };
