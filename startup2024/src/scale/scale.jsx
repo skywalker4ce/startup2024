@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import { ChatNotifier, ChatEvent } from './websocketchat';
 
 export function Scale() {
-
     const navigate = useNavigate();
+    const [messages, setMessages] = useState([]);
+    const [message, setMessage] = useState("");
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        navigate('/database');
-    }
+    useEffect(() => {
+        const handleEvent = (event) => {
+            if (event.type === ChatEvent.Message || event.type === ChatEvent.System) {
+                setMessages((prev) => [...prev, `${event.from}: ${event.value.msg}`]);
+            }
+        };
+
+        ChatNotifier.addHandler(handleEvent);
+
+        return () => {
+            ChatNotifier.removeHandler(handleEvent);
+        };
+    }, []);
+
+    const sendMessage = () => {
+        if (message.trim() !== "") {
+            ChatNotifier.broadcastMessage('User', { msg: message });
+            setMessage("");
+        }
+    };
 
     const handleLogout = (event) => {
         event.preventDefault();
@@ -24,8 +42,6 @@ export function Scale() {
 
     return (
         <main className="container text-center mb-auto">
-
-            {/* Row to position Logout and Back buttons on the left and right */}
             <div className="row d-flex justify-content-between align-items-start mb-4">
                 <div className="col-md-3 text-start">
                     <button onClick={handleLogout} className="btn btn-logout">Logout</button>
@@ -35,8 +51,26 @@ export function Scale() {
                 </div>
             </div>
 
-            <div className="row justify-content-center">
-                <div className="col-md-8">
+            <div className="row">
+                <div className="col-md-3">
+                    <div className="chat-box border p-3" style={{ height: "400px", overflowY: "scroll", backgroundColor: "#f9f9f9" }}>
+                        {messages.map((msg, index) => (
+                            <div key={index} className="message">{msg}</div>
+                        ))}
+                    </div>
+                    <div className="input-group mt-2">
+                        <input
+                            type="text"
+                            className="form-control"
+                            placeholder="Type a message..."
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                        />
+                        <button onClick={sendMessage} className="btn btn-primary">Send</button>
+                    </div>
+                </div>
+
+                <div className="col-md-9">
                     <h2 className="mb-4">Category</h2>
                     <div className="rating-buttons">
                         <button className="rating-btn" data-rating="10">10</button>
