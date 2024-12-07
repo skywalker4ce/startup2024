@@ -10,7 +10,8 @@ export function Scale() {
     useEffect(() => {
         const handleEvent = (event) => {
             if (event.type === ChatEvent.Message || event.type === ChatEvent.System) {
-                setMessages((prev) => [...prev, `${event.from}: ${event.value.msg}`]);
+                const messageText = event.type === ChatEvent.Message ? `${event.from}: ${event.value.msg}` : `[System] ${event.value.msg}`;
+                setMessages((prev) => [...prev, messageText]);
             }
         };
 
