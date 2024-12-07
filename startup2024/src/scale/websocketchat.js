@@ -25,15 +25,23 @@ class ChatNotifierClass {
       this.reconnectWebSocket();
     };
 
-    this.socket.onmessage = (msg) => {
+    this.socket.onmessage = async (msg) => {
       try {
-        const event = JSON.parse(msg.data);
+        let event;
+        if (msg.data instanceof Blob) {
+          // Attempt to read the Blob as text
+          const text = await msg.data.text();
+          event = JSON.parse(text); // Try parsing the text
+        } else {
+          event = JSON.parse(msg.data); // Otherwise, assume it's already a string
+        }
         this.receiveEvent(event);
       } catch (error) {
         console.error('Failed to parse message', error);
-        // Optionally handle unexpected data format here
+        // Optionally handle the Blob or malformed JSON here
       }
     };
+    
   }
 
   reconnectWebSocket() {
