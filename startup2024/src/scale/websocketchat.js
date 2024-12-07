@@ -1,3 +1,5 @@
+// websocketchat.js
+
 const ChatEvent = {
     System: 'system',
     Message: 'chatMessage',
