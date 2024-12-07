@@ -10,7 +10,7 @@ const ChatEvent = {
     constructor() {
       const port = window.location.port;
       const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-      this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
+      this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/scale/ws`);
   
       this.initializeWebSocket();
     }
@@ -39,7 +39,7 @@ const ChatEvent = {
       setTimeout(() => {
         const port = window.location.port;
         const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
-        this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
+        this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/scale/ws`);
         this.initializeWebSocket(); // Re-initialize the WebSocket connection
       }, 4000); // Reconnect every 3 seconds
     }
