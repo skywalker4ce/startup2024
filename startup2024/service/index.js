@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt');
 const express = require('express');
 const app = express();
 const DB = require('./database.js');
+const { peerProxy } = require('./peerProxy.js');
 
 const authCookieName = 'token';
 
@@ -107,6 +108,9 @@ apiRouter.post('/categories', (_req, res) => {
 
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server is listening on port ${port}`);
+const httpService = app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
 });
+
+
+peerProxy(httpService);
