@@ -95,3 +95,12 @@ For this deliverable I got the login working with the database so a user is logg
 - [x] **Use MongoDB to store credentials** - Stores both user and password
 - [x] **Restricts functionality** - You cannot login unless you are already in the database. Can't access anything else without logging in
 
+## WebSocket deliverable
+
+For this deliverable I used webSocket to create a chatbox within the application. The chat box loads after clicking submit on the right side of the second page. The left submit doesn't work quite yet.
+
+- [x] **Backend listens for WebSocket connection** - done!
+- [x] **Frontend makes WebSocket connection** - done!
+- [x] **Data sent over WebSocket connection** - done!
+- [x] **WebSocket data displayed** - I added a chatbox so that users could interact after seeing their rating scales
+- [] **Full Functionality** - INCOMPLETE. I didn't want to screw anything up before trying this part, so I submited with just the websocket portion working, and if I get the other part to work then this will change, if not then the functionality won't work completely
