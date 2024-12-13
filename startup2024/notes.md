@@ -159,3 +159,89 @@ Copy code
 <!DOCTYPE html>
 Which of the following correctly describes JSON?
 JSON (JavaScript Object Notation) is a lightweight data format used for storing and transporting data, typically structured as key-value pairs.
+
+
+FINAL
+
+Reordered Study Guide
+What is the default port for HTTP/HTTPS/SSH?
+
+HTTP: 80
+HTTPS: 443
+SSH: 22
+What does an HTTP status code in the range of 300/400/500 indicate?
+
+300: Redirection (e.g., 301 Moved Permanently)
+400: Client error (e.g., 404 Not Found)
+500: Server error (e.g., 500 Internal Server Error)
+What does the HTTP header content-type allow you to do?
+
+Specifies the media type of the resource (e.g., application/json, text/html).
+What does a “Secure cookie”/”Http-only cookie”/”Same-site cookie” do?
+
+Secure cookie: Sent only over HTTPS.
+Http-only cookie: Not accessible via JavaScript (document.cookie).
+Same-site cookie: Restricts cross-origin requests to mitigate CSRF attacks.
+Assuming the following Express middleware, what would be the console.log output for an HTTP GET request with a URL path of /api/document?
+
+The output depends on the req object properties being logged and the order of middleware.
+Given the following Express service code: What does the following front-end JavaScript that performs a fetch return?
+
+The response is determined by the res.json() or res.send() output from the Express route.
+Given the following MongoDB query, select all of the matching documents {name: "Mark"}
+
+Returns all documents where the name field is "Mark".
+How should user passwords be stored?
+
+Use bcrypt or a similar hashing algorithm. Never store passwords in plaintext.
+Assuming the following Node.js WebSocket code in the back end, and the following front-end WebSocket code, what will the front end log to the console?
+
+The logs depend on the events triggered (onopen, onmessage, etc.) and the data sent by the server.
+What is the WebSocket protocol intended to provide?
+
+Full-duplex communication between client and server over a single connection.
+What do the following acronyms stand for?
+
+JSX: JavaScript XML
+JS: JavaScript
+AWS: Amazon Web Services
+NPM: Node Package Manager
+NVM: Node Version Manager
+Assuming an HTML document with a body element, what text content will the following React component generate?
+
+The output depends on the JSX and props passed to the React component.
+Given a set of React components that include each other, what will be generated?
+
+React renders components hierarchically based on their structure.
+What does a React component with React.useState do?
+
+It allows you to add state to functional components.
+What are React Hooks used for?
+
+To manage state and side effects in functional components.
+What does the State Hook/Context Hook/Ref Hook/Effect Hook/Performance Hook do?
+
+State Hook: Manages state (useState).
+Context Hook: Accesses global state (useContext).
+Ref Hook: Creates references (useRef).
+Effect Hook: Handles side effects (useEffect).
+Performance Hook: Optimizes rendering (React.memo, useMemo, useCallback).
+Given React Router code, select statements that are true.
+
+React Router enables client-side navigation without page reloads.
+What does the package.json file do?
+
+Defines the project, its dependencies, scripts, and metadata.
+What does the fetch function do?
+
+Makes HTTP requests from JavaScript and returns a Promise.
+What does Node.js do?
+
+Provides a JavaScript runtime for server-side applications.
+What does pm2 do?
+
+A process manager for Node.js applications.
+What does Vite do?
+
+A fast development build tool optimized for modern web applications.
+This should now follow the sequence of your questions exactly.
